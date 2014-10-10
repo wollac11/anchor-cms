@@ -9,3 +9,4 @@ composer.phar
 *.espressostorage
 
 anchor/config/db.php
+.c9

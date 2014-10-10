@@ -59,14 +59,6 @@ foreach($app['config']->get('app.providers', array()) as $className) {
 }
 
 /**
- * Start session for admin only, this way we can use a
- * more aggresive caching for the site.
- */
-if($app['admin']) {
-	$app['session']->start();
-}
-
-/**
  * Handle the request
  */
 $app['events']->trigger('beforeDispatch');
@@ -74,13 +66,6 @@ $app['events']->trigger('beforeDispatch');
 $response = $app['router']->dispatch();
 
 $app['events']->trigger('afterDispatch');
-
-/**
- * Close session
- */
-if($app['admin']) {
-	$app['session']->close();
-}
 
 /**
  * Create a Response if we only have a string

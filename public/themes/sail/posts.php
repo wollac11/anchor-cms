@@ -1,3 +1,7 @@
+
+
+
+
 <?php while(posts()): ?>
 <article>
 	<time datetime="<?php echo article_date(); ?>">
