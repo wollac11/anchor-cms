@@ -2,6 +2,10 @@
 
 $time_start = microtime(true);
 
+function _($v) {
+	return $v;
+}
+
 /**
  * Setup autoloader
  */
