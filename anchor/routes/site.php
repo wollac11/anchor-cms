@@ -148,10 +148,11 @@ Route::post($posts_page->slug . '/(:any)', function($slug) use($posts_page) {
 		return Response::create(new Template('404'), 404);
 	}
 
-	$input = filter_var_array(Input::get(array('name', 'email', 'text')), array(
+	$input = filter_var_array(Input::get(array('name', 'email', 'text', 'reply_to')), array(
 		'name' => FILTER_SANITIZE_STRING,
 		'email' => FILTER_SANITIZE_EMAIL,
-		'text' => FILTER_SANITIZE_SPECIAL_CHARS
+		'text' => FILTER_SANITIZE_SPECIAL_CHARS,
+		'reply_to' => FILTER_SANITIZE_NUMBER_INT
 	));
 
 	$validator = new Validator($input);
@@ -245,7 +246,7 @@ Route::get(array('search', 'search/(:any)', 'search/(:any)/(:num)'), function($s
 	//$term = Session::get($slug); //this was for POST only searches
 
 	// revert double-dashes back to spaces
-	$term = str_replace('--', ' ', $term);
+	$term = str_replace('-', ' ', $term);
 
 	if($offset > 0) {
 		list($total, $posts) = Post::search($term, $offset, Post::perPage());
