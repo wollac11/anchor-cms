@@ -1,12 +1,12 @@
 # os/app generated files
 Thumbs.db
 .DS_Store
+.htaccess
 *.esproj
 *.log
 *.gz
-
-# env
-/anchor/config/dev
+*.json
+*.txt
 
 # generated config
 /anchor/config/app.php
@@ -38,3 +38,6 @@ robots.txt
 
 # User humans.txt [http://humanstxt.org/]
 humans.txt
+
+# Composer vendor
+vendor/

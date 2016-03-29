@@ -2,7 +2,7 @@
 We're currently in the process of developing `v1.0` but there are still issues to iron out with the existing distro: `v0.x.x`. So we've compiled this short document to help you guys help *us*!
 
 ### What branch do I work from? How do I even pull request?
-There seems to have been a bit of confusion in the past, and yes our branches are currently a bit confusing in structure. If you want to conrtibute to the current version of Anchor then please work from the `0.9-dev` branch. This is where any features/refactoring should be happening. If what you're planning on doing is fixing a bug then please work from the `master` branch, this branch will always have the latest *tagged* release of Anchor. When you submit a bug fix PR we'll also merge it into the current version `dev` branch.
+There seems to have been a bit of confusion in the past, and yes our branches are currently a bit confusing in structure. If you want to conrtibute to the current version of Anchor then please work from the `pre-1.0-develop` branch. This is where any features/refactoring should be happening. If what you're planning on doing is fixing a bug then please work from the `master` branch, this branch will always have the latest *tagged* release of Anchor. When you submit a bug fix PR we'll also merge it into the current version `dev` branch.
 
 We're planning on cleaning everything up once `1.0` is released, by following the simple Gitflow system which can be found in many Git GUI's, in the git extras package and so on.
 
@@ -15,6 +15,12 @@ We're planning on cleaning everything up once `1.0` is released, by following th
 ### Why won't you merge my PR?
 This may be the case if you've not followed our guidelines, your code does not do as suggested, it doesn't work or if we simply haven't had the time to take a look at it properly and ensure it's working correctly.
 
+### I've translated Anchor to 'X' language, how do I submit this?
+Translations should be submitted to the official [anchor-translations](https://github.com/anchorcms/anchor-translations) repo, please check this repo before you start incase the translation has already been made.
+
+### How to submit feature requests
+If you would like to add submit a feature request then please go to our [Feathub page](http://feathub.com/anchorcms/anchor-cms). If it's not already on the list then please add it and provide a description in the comments section. If it already exists then please give the existing entry a thumbs up. :+1:
+
 ### How to submit issues
 Please follow the below points:
 - Check if bug is consistent in different environments
@@ -25,6 +31,8 @@ Please follow the below points:
 - Explain bug briefly but in detail
 - Give guidance on how to reproduce bug
 - Add screenshots when possible
+
+> ProTip: Check out [this example issue](https://github.com/anchorcms/anchor-cms/issues/873#issuecomment-151784603) for reference on good bug reporting.
 
 ### When writing your code, always follow standards
 If you're familiar with open source software, you probably know how important coding guidelines and standards are. Most common are (in order of appearance) PEAR, Zend(Framework) and [PSR-1](http://www.php-fig.org/psr/psr-1)/[PSR-2](http://www.php-fig.org/psr/psr-2).
