@@ -6,32 +6,36 @@
 
 	<fieldset class="header">
 		<div class="wrap">
-			<?php echo $messages; ?>
+			
 
 			<?php echo Form::text('title', Input::previous('title', $article->title), array(
-				'placeholder' => __('posts.title'),
-				'autocomplete'=> 'off',
-				'autofocus' => 'true'
-			)); ?>
+                'placeholder' => __('posts.title'),
+                'autocomplete'=> 'off',
+                'autofocus' => 'true'
+            )); ?>
 
 			<aside class="buttons">
 				<?php echo Form::button(__('global.save'), array(
-					'type' => 'submit',
-					'class' => 'btn'
-				)); ?>
+                    'type' => 'submit',
+                    'class' => 'btn'
+                )); ?>
+				
+				<?php echo Html::link('admin/posts', __('global.cancel'), array(
+                    'class' => 'btn cancel blue'
+                )); ?>
 
 				<?php echo Html::link('admin/posts/delete/' . $article->id, __('global.delete'), array(
-					'class' => 'btn delete red'
-				)); ?>
+                    'class' => 'btn delete red'
+                )); ?>
 			</aside>
 		</div>
 	</fieldset>
 
 	<fieldset class="main">
 		<div class="wrap">
-			<?php echo Form::textarea('html', Input::previous('html', htmlentities($article->html, ENT_QUOTES, 'UTF-8')), array(
-				'placeholder' => __('posts.content_explain')
-			)); ?>
+			<?php echo Form::textarea('markdown', Input::previous('markdown', $article->markdown), array(
+                'placeholder' => __('posts.content_explain')
+            )); ?>
 
 			<?php echo $editor; ?>
 		</div>
@@ -79,7 +83,7 @@
 				<?php echo Form::textarea('js', Input::previous('js', $article->js), array('id' => 'label-js')); ?>
 				<em><?php echo __('posts.custom_js_explain'); ?></em>
 			</p>
-			<?php foreach($fields as $field): ?>
+			<?php foreach ($fields as $field): ?>
 			<p>
 				<label for="extend_<?php echo $field->key; ?>"><?php echo $field->label; ?>:</label>
 				<?php echo Extend::html($field); ?>
@@ -95,9 +99,10 @@
 <script src="<?php echo asset('anchor/views/assets/js/text-resize.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/editor.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/change-saver.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/autosave.js'); ?>"></script>
 <script>
-    $('textarea[name=html]').editor();
-    $('form').changeSaver('textarea[name=html]');
+    $('textarea[name=markdown]').editor();
+    $('form').changeSaver('textarea[name=markdown]');
 </script>
 
 <?php echo $footer; ?>

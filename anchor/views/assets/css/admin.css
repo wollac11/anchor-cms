@@ -189,7 +189,8 @@ hgroup {
 	font-size: 13px;
 	line-height: 38px;
 	font-weight: bold;
-
+	text-align: center;
+	
 	border: none;
 	border-radius: 5px;
 
@@ -514,7 +515,7 @@ body.login {
 		font-weight: lighter;
 
 		float: left;
-		width: 600px;
+		width: 580px;
 		padding: 30px 0;
 
 		background: transparent;
@@ -523,10 +524,12 @@ body.login {
 	.header .buttons {
 		float: right;
 		padding: 30px 0;
+		max-width: 380px;
 	}
 
 		.header .buttons .btn {
 			margin-left: 8px;
+			margin-bottom: 8px;
 		}
 
 .redirect {
@@ -813,3 +816,24 @@ input[type='range'], ::-webkit-slider-thumb {
 	.indent{
 		padding-left: 40px;
 	}
+
+
+/*
+	Adition CSS code for translations 
+*/
+
+/*
+	menu fix for polis users, require class "pl-PL" in body tag 
+*/
+
+.pl-PL  .top .logo {
+	margin-right: 10px;
+}
+
+.pl-PL .top nav a {
+	margin-right: 5px;
+}
+
+.pl-PL .top .btn {
+	margin-left: 10px;
+}

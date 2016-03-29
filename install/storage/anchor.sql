@@ -54,7 +54,7 @@ CREATE TABLE `{{prefix}}pages` (
   `status` enum('draft','published','archived') NOT NULL,
   `redirect` text NOT NULL,
   `show_in_menu` tinyint(1) NOT NULL,
-  `menu_order` int(4) NOT NULL,
+  `menu_order` int(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `status` (`status`),
   KEY `slug` (`slug`)
@@ -82,7 +82,7 @@ CREATE TABLE `{{prefix}}posts` (
   `author` int(6) NOT NULL,
   `category` int(6) NOT NULL,
   `status` enum('draft','published','archived') NOT NULL,
-  `comments` tinyint(1) NOT NULL,
+  `comments` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `status` (`status`),
   KEY `slug` (`slug`)
